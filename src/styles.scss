@@ -1,0 +1,28 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$test-task-primary: mat-palette($mat-indigo);
+$test-task-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$test-task-warn: mat-palette($mat-red);
+
+$test-task-theme: mat-light-theme(
+  (
+    color: (
+      primary: $test-task-primary,
+      accent: $test-task-accent,
+      warn: $test-task-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($test-task-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
