@@ -1,13 +1,14 @@
 :host ::ng-deep {
   .mat-badge-content {
-    right: -9px!important;
-    top: -10px!important;
+    right: -9px !important;
+    top: -10px !important;
     border-radius: 0;
     background: red;
     width: 18px;
     height: 18px;
   }
 }
+
 .d-flex {
   background: #4876c3;
   position: relative;
@@ -47,7 +48,7 @@
 
         &:hover {
           color: white;
-          transition: .5s;
+          transition: 0.5s;
           cursor: pointer;
         }
       }

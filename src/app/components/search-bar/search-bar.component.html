@@ -1,9 +1,9 @@
 <mat-icon class="search">search</mat-icon>
-<input type="text" [(ngModel)]="str">
+<input type="text" [(ngModel)]="str" />
 <div class="search-block" *ngIf="isSearch" @enterAnim>
   <div class="d-flex">
     <mat-checkbox>мои</mat-checkbox>
-    <input type="text" class="author" placeholder="Автор">
+    <input type="text" class="author" placeholder="Автор" />
   </div>
   <div class="d-flex">
     Сортировать по:
@@ -20,6 +20,4 @@
   </div>
 </div>
 <mat-icon class="close" (click)="str = ''">close</mat-icon>
-<div class="search-text" (click)="setSearch()">
-  Найти
-</div>
+<div class="search-text" (click)="setSearch()">Найти</div>
