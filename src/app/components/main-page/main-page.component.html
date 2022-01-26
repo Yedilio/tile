@@ -1,0 +1,25 @@
+<div class="d-flex">
+  <img class="logo" src="./assets/tile.png" alt="">
+  <div class="menu">
+    <ul>
+      <ng-container *ngIf="!isSearch">
+        <li>Ссылки <mat-icon class="drop_down">arrow_drop_down</mat-icon></li>
+        <li>Контакты</li>
+        <li>Теги <mat-icon class="drop_down">arrow_drop_down</mat-icon></li>
+        <li>Просьбы <mat-icon class="drop_down">arrow_drop_down</mat-icon></li>
+        <li>Избранное <mat-icon class="drop_down">arrow_drop_down</mat-icon></li>
+        <li>Посещения <mat-icon class="drop_down">arrow_drop_down</mat-icon></li>
+        <li class="icon" (click)="isSearch = true"><mat-icon>search</mat-icon></li>
+      </ng-container>
+      <app-search-bar *ngIf="isSearch" @enterAnimation></app-search-bar>
+      <li><mat-icon>add_circle</mat-icon></li>
+    </ul>
+  </div>
+  <div class="right">
+    <mat-icon>email</mat-icon>
+    <span matBadge="18" matBadgeOverlap="false">
+      <mat-icon>notifications</mat-icon>
+    </span>
+    <img class="profile" src="./assets/mess.jpeg" alt="">
+  </div>
+</div>
