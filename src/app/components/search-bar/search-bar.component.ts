@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -18,13 +24,25 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class SearchBarComponent implements OnInit {
   str: string = '';
   isSearch: boolean = false;
+  searchBlock: boolean = false;
   option: number = null;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (window.innerWidth <= 415) {
+      this.searchBlock = true;
+    }
+  }
 
   setSearch() {
     this.isSearch = !this.isSearch;
+  }
+
+  @HostListener('document:click', ['$event'])
+  documentClick(event: MouseEvent) {
+    console.log('event1 :', event);
+    // your click logic
+    event.stopPropagation();
   }
 }

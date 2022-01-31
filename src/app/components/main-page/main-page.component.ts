@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -20,4 +20,16 @@ export class MainPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  @HostListener('document:click', ['$event'])
+  documentClick(event: MouseEvent) {
+    console.log('event:', event);
+    // your click logic
+    this.isSearch = false;
+  }
+
+  setSearch() {
+    this.isSearch = true;
+    console.log('issearch: ', this.isSearch);
+  }
 }
